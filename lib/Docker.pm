@@ -6,7 +6,7 @@ use constant LINE_BREAK => qr/\n/;
 use constant SEPARATOR => qr/[\s]{2,}/;
 
 sub ps {
-  my $command = `docker ps`;
+  my $command = `sudo docker ps`;
   my @lines = split LINE_BREAK, $command;
   my $line_number = 1;
   my @headers = split(SEPARATOR, shift(@lines));
@@ -33,8 +33,12 @@ sub ps {
 
 sub create {
   my $name = container_name();
-  my $command = `docker run --name $name -c 10 -m 5MB -d -P memcached`;
-  Docker->find($name);
+  my $command = `sudo docker run --name $name -c 10 -m 5MB -d -P memcached`;
+  my %container = Docker->find($name);
+  my $port = $container->{'ports'};
+  `sudo ufw allow $port`;
+
+  %container;
 }
 
 sub find {
@@ -58,10 +62,7 @@ sub removable {
 }
 
 sub ip {
-  shift;
-  my $ip = `boot2docker ip`;
-  $ip =~ s/\n//;
-  $ip;
+  $ENV{'IP'};
 }
 
 sub underscore {

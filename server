@@ -1,2 +1,3 @@
 #!/bin/bash
-morbo app.pl --listen "http://*:8080"
+export IP=178.62.114.106
+morbo app.pl --listen "http://*:80"
