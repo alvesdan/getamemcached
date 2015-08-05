@@ -1,0 +1,26 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+body {
+  background: #5e8da0;
+}
+
+.page-header {
+  border-color: #95bece;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.page-header h1 {
+  font-size: 2em;
+  color: #fff;
+}
+
+.page-header span {
+  display: block;
+  font-size: 2em;
+}
+
+.well {
+  margin-top: 20px;
+  background-color: #95bece;
+  border: 0;
+}

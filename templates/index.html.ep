@@ -1,0 +1,36 @@
+% use Docker;
+% my $ip = Docker->ip();
+<!DOCTYPE html>
+<html>
+  <head><title>Get a Memcached</title></head>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet" />
+  <body>
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-sm-12">
+          <div class="page-header">
+            <h1>GET A <span>MEMCACHED</span></h1>
+            <p class="lead">Get a 5MB memcached instance for 9 hours with one click*</p>
+          </div>
+
+          <a href="#" id="getContainer" class="btn btn-info btn-lg">Get a Memcached</a>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4 col-sm-offset-4">
+          <div class="well hidden" id="responseHolder">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="containers.js"></script>
+    <script>
+      var docker_ip = "<%= $ip %>", containers = new Containers(docker_ip);
+    </script>
+  </body>
+</html>

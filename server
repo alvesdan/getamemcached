@@ -1,0 +1,2 @@
+#!/bin/bash
+morbo app.pl --listen "http://*:8080"
