@@ -2,8 +2,9 @@ use warnings;
 use strict;
 
 use lib 'lib';
-use Docker;
 use Mojolicious::Lite;
+use constant MODE => app->mode;
+use Docker;
 
 get "/" => sub {
   my $self = shift;
@@ -39,4 +40,5 @@ post "/create" => sub {
   );
 };
 
+app->log->debug("Starting application in ".MODE);
 app->start;

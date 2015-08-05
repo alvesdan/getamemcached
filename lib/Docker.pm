@@ -34,11 +34,11 @@ sub ps {
 sub create {
   my $name = container_name();
   my $command = `sudo docker run --name $name -c 10 -m 5MB -d -P memcached`;
-  my %container = Docker->find($name);
+  my $container = Docker->find($name);
   my $port = $container->{'ports'};
   `sudo ufw allow $port`;
 
-  %container;
+  %$container;
 }
 
 sub find {

@@ -1,0 +1,3 @@
+#!/bin/bash
+export IP=(boot2docker ip)
+morbo app.pl --listen "http://*:8080"
