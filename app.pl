@@ -13,7 +13,7 @@ get "/" => sub {
   );
 };
 
-get "/ds" => sub {
+get "/ps" => sub {
   my $self = shift;
   my @containers = Docker->ps();
 

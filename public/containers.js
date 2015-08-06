@@ -14,7 +14,7 @@ var Containers = (function(){
 
   Module.prototype.list = function(){
     var containers = $.ajax({
-      url: '/ds.json',
+      url: '/ps.json',
       type: 'GET',
       async: false
     }).responseJSON;
