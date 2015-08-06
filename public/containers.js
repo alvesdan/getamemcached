@@ -1,5 +1,5 @@
 var Containers = (function(){
-  var template = "# Your instance is ready!<br /> $ telnet {ip} {port}";
+  var template = "<span class=\"comment\"># Your instance is ready!</span>$ telnet {ip} {port}";
   var bindEvents = function(instance) {
     $('#getContainer').on('click', function(){
       instance.create();
