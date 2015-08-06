@@ -8,6 +8,6 @@ I am using this project to learn Pearl.
 
 ## Running
 ```
-$git clone
+$ git clone
 $ ./development
 ```
