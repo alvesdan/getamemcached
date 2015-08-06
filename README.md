@@ -4,9 +4,10 @@ Project based on [Get A Redis](https://github.com/MohamedBassem/getaredis) to pl
 I am using this project to learn Pearl.
 
 ## Dependencies
- - Docker - `boot2docker` as I am using Mac to development
+ - Docker
 
 ## Running
 ```
-$ ./server
+$git clone
+$ ./development
 ```
