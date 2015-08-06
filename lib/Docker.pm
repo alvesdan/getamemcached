@@ -33,7 +33,7 @@ sub ps {
 
 sub create {
   my $name = container_name();
-  my $command = `docker run --name $name -c 10 -m 5MB -d -P memcached`;
+  my $command = `docker run --name $name -c 5 -m 5MB -d -P memcached`;
   # `sudo ufw allow $port`;
   Docker->find($name);
 }
