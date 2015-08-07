@@ -33,7 +33,15 @@ get "/removable" => sub {
 
 post "/create" => sub {
   my $self = shift;
-  my %container = Docker->create();
+  my $ip = $self->tx->remote_address;
+  my $running = Docker->running($ip);
+  my %container;
+
+  if ($running) {
+    %container = %$running;
+  } else {
+    %container = Docker->create($ip);
+  }
 
   $self->render(
     json => \%container

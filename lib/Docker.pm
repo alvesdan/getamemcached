@@ -31,10 +31,21 @@ sub ps {
   @containers;
 }
 
+sub running {
+  shift;
+  my $ip = shift;
+  my $name = container_name($ip);
+  my %container = Docker->find($name);
+  return \%container if %container;
+
+  undef;
+}
+
 sub create {
-  my $name = container_name();
+  shift;
+  my $ip = shift;
+  my $name = container_name($ip);
   my $command = `docker run --name $name -c 5 -m 5MB -d -P memcached`;
-  # `sudo ufw allow $port`;
   Docker->find($name);
 }
 
@@ -44,7 +55,8 @@ sub find {
   my @containers = ps();
   my ($container_ref) = grep { $_->{'names'} eq $name } @containers;
 
-  %$container_ref;
+  return %$container_ref if $container_ref;
+  ();
 }
 
 sub removable {
@@ -69,7 +81,9 @@ sub underscore {
 }
 
 sub container_name {
-  time();
+  my $ip = shift;
+  $ip =~ s/\./\-/g;
+  $ip;
 }
 
 sub parse_port {
