@@ -33,7 +33,7 @@ get "/removable" => sub {
 
 post "/create" => sub {
   my $self = shift;
-  my $ip = $self->tx->remote_address;
+  my $ip = $self->req->headers->header('X-Real-IP') || $self->tx->remote_address;
   my $running = Docker->running($ip);
   my %container;
 
