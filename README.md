@@ -4,7 +4,7 @@ Project inspired on [Get A Redis](https://github.com/MohamedBassem/getaredis) to
 I am using this project to learn Pearl.
 
 ## Link
-Currently running on a DigitalOcean droplet with Ubuntu 15.04. [Check out](http://178.62.114.106/).
+Currently running on a DigitalOcean droplet with Ubuntu 15.04. [Check out](http://getamemcached.danielalves.me/).
 
 ## Using
  - Docker
