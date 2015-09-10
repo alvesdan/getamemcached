@@ -6,7 +6,7 @@ I am using this project to learn Pearl.
 ![Get A Memcached](http://f.cl.ly/items/0E2B2k060x0G0d3Y411s/Memcached.png)
 
 ## Link
-Currently running on a DigitalOcean droplet with Ubuntu 15.04. [Check out](http://getamemcached.danielalves.me/).
+Currently running on a DigitalOcean droplet with Ubuntu 15.04. [Check it out](http://getamemcached.danielalves.me/).
 
 ## Run development
 ```shell
